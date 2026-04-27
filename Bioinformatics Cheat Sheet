@@ -1,0 +1,54 @@
+\-	Creates a dash for lists
+1\.	Number for lists
+cd	Change directories
+pwd	Print working directory
+ls	Make a list of files in a directory
+ls -l	view file permissions
+#	Used for sections, one in front of a word makes it bolder/bigger
+ls-F	Will show slashes to indicate if there are files
+man ls	Manual for ls options
+ls -lrth	Prints extra information about the files (who owns, who made)
+cd ../	Step back one level in the directory hierarchy
+cd $HOME	Return to home directory
+cd ~	Shorthand for home directory
+absolute path	Starts all the way back to the base or root of the computer vs a short cd (ex. /home/users/sen97/gen711-811/shell\_data)
+ctrl+c	Get out of a loop if prior command had unclosed parentheses
+head	Show first few lines of a file without opening the whole file
+echo	Shows details about the variables you pin in (ex. $home)
+history	Shows history of your code
+grep	search through a file and return only the lines you are searching for
+^	starts with
+grep ^ (ex. grep '^c')	will search for the thing you are looking for at the beginning of a line.
+>	Redirect the output to a file (ex. grep "^@" SRR097977.fastq > headerlines.txt). Saves output as headerlines.txt.
+|	Pipe symbol, so connects one action to another
+wc	word count, will print number of lines, words, and characters.
+wc -l	word count, but specific to count the number of lines
+ls | grep '^c'	pipe command to list things that start with "c"
+ls *a*	List all files that contain the letter a
+ls *o	List all files that end with the letter o
+ls *[ac]*	List all files that contain the letter a or c
+ls -laF	List who made the file
+ls /usr/bin/	List files in bin
+ls /usr/bin/*sh	List files in bin that start with sh
+cat	print file to screen
+less /	show the contents of the file
+q	quit out of less
+head -n; tail -n	shows the head or tail of a document; -n gives the number of lines you want
+mkdir backup	makes a directory called backup
+cp	Makes a copy of the file (ex. cp SRR098026.fastq SRR098026-backup.fastq) Second name is name of backup.
+mv	move a file or folder
+mv *backup.fastq backup/	move anything with the file name (ex. backup.fastq) to another folder (backup))
+ls -a .hidden	List hidden files in the hidden directory
+Permissions breakdown	rw-: r means you can read the file, w means you can write to it; and - means you don't have permission to carry out the code in that space (would be x if you can execute). st rwx = permissions for user, 2nd is permissions for group, 3rd is permission for others
+chmod (-w)	change file permissions -w removes write of that user.
+rm -Rf backup/	remove or delete a directory and everything in it
+>>	appends something to a file rather then overwrite it
+grep -v	Lets you omit things from a search
+grep -B1 -A2 N SRR098026.fastq	Find N in the file and show one line before and two after.
+grep -B1 -A2 N SRR098026.fastq| grep -v '^--',	Find N in the file and show one line before and two after, but exclude everything that has ^-- in it.
+
+Quality encoding: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJ
+                   |         |         |         |         |
+Quality score:    01........11........21........31........41
+
+The four nucleotides that appear in DNA are abbreviated A, C, T and G. Unknown nucleotides are represented with the letter N. An N appearing in a sequencing file represents a position where the sequencing machine was not able to confidently determine the nucleotide in that position. You can think of an N as being aNy nucleotide at that position in the DNA sequence.
